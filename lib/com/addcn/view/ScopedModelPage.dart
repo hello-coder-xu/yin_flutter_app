@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/com/addcn/model/MainModel.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 ///状态管理
@@ -8,23 +9,35 @@ class ScopedModelPage extends StatefulWidget {
 }
 
 class ScopedModelPageState extends State<ScopedModelPage> {
+
+
+
   @override
   Widget build(BuildContext context) {
-    return ScopedModel(
-      model: CounterModel(),
-      child: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('状态管理'),
-          centerTitle: true,
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('状态管理'),
+        centerTitle: true,
+      ),
+      body: new Center(
+        child: new Column(
+          children: <Widget>[
+            CounterWraper(),
+            ScopedModelDescendant<MainModel>(
+              builder: (context, _, model) => new FlatButton(
+                    onPressed: () => model.toTwoPage(context),
+                    child: new Text('toTwoPage'),
+                  ),
+            ),
+          ],
         ),
-        body: CounterWraper(),
-        floatingActionButton: ScopedModelDescendant<CounterModel>(
-          rebuildOnChange: false,
-          builder: (context, _, model) => FloatingActionButton(
-                child: new Icon(Icons.add),
-                onPressed: model.add,
-              ),
-        ),
+      ),
+      floatingActionButton: ScopedModelDescendant<MainModel>(
+        rebuildOnChange: false,
+        builder: (context, _, model) => FloatingActionButton(
+              child: new Icon(Icons.add),
+              onPressed: model.add,
+            ),
       ),
     );
   }
@@ -34,9 +47,7 @@ class ScopedModelPageState extends State<ScopedModelPage> {
 class CounterWraper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Conuter(),
-    );
+    return Center(child: Conuter());
   }
 }
 
@@ -44,23 +55,32 @@ class CounterWraper extends StatelessWidget {
 class Conuter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ScopedModelDescendant<CounterModel>(
+    return ScopedModelDescendant<MainModel>(
       builder: (context, _, model) => ActionChip(
             onPressed: model.add,
             backgroundColor: Colors.blue,
-            label: new Text('${model._count}'),
+            label: new Text('${model.count}'),
           ),
     );
   }
 }
 
-class CounterModel extends Model {
-  int _count = 0;
-
-  int get count => _count;
-
-  void add() {
-    _count += 1;
-    notifyListeners();
+class ScopedModelTwoPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('ScopedModelTwoPage'),
+        centerTitle: true,
+      ),
+      body: new Center(
+        child: ScopedModelDescendant<MainModel>(
+          builder: (context, _, model) => new FlatButton(
+                onPressed: model.add,
+                child: new Text('add'),
+              ),
+        ),
+      ),
+    );
   }
 }

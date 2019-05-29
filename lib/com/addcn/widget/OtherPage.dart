@@ -18,9 +18,9 @@ class OtherPageState extends State<OtherPage> {
     PageBean("动画", "Animation", null),
     PageBean("通知", "Notification", null),
     PageBean("设备信息", "DeviceInfo", null),
-    PageBean("Stream", "Stream", StreamPage()),
-    PageBean("状态管理", "StateManage", StateManagePage()),
-    PageBean("状态管理(第三方)", "ScopedModelPage", ScopedModelPage()),
+    PageBean("数据监听", "Stream", StreamPage()),
+    PageBean("状态管理", "InheritedWidget", StateManagePage()),
+    PageBean("状态管理", "ScopedModelPage", ScopedModelPage()),
   ];
 
   @override

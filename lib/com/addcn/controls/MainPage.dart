@@ -24,23 +24,12 @@ import 'package:flutter_app/com/addcn/page/RecaptchaPage.dart';
 
 import 'package:flutter_app/com/addcn/layout/MyRelativeLayout.dart';
 
-class MainPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.red, backgroundColor: Colors.white),
-      home: MainPageBody(),
-    );
-  }
-}
-
-class MainPageBody extends StatefulWidget {
+class MainPage extends StatefulWidget {
   @override
   MainPageState createState() => new MainPageState();
 }
 
-class MainPageState extends State<MainPageBody> {
+class MainPageState extends State<MainPage> {
   List<PageBean> items = [
     PageBean("线性布局", "LinearLayout", new MyLinearLayout()),
     PageBean("相对布局", "RelativeLayout", new MyRelativeLayout()),

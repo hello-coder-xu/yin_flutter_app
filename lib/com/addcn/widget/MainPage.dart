@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/com/addcn/model/TabModel.dart';
+import 'package:flutter_app/com/addcn/model/MainModel.dart';
+import 'package:flutter_app/com/addcn/model/MainTabPageModel.dart';
 import 'package:flutter_app/com/addcn/widget/ContainerPage.dart';
 import 'package:flutter_app/com/addcn/widget/ControlsPage.dart';
 import 'package:flutter_app/com/addcn/widget/OtherPage.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 ///主页
 class MainPage extends StatefulWidget {
@@ -11,11 +13,7 @@ class MainPage extends StatefulWidget {
 }
 
 class MainPageState extends State<MainPage> {
-  List<TabModel> list = [
-    TabModel(position: 0, titile: "控件", icon: Icons.home),
-    TabModel(position: 1, titile: "容器", icon: Icons.home),
-    TabModel(position: 2, titile: "其他", icon: Icons.home),
-  ];
+  MainTabPageModel model;
   int position = 0;
 
   ///获取颜色
@@ -46,20 +44,30 @@ class MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(list[position].titile),
-        centerTitle: true,
-      ),
-      body: contentView(),
-      bottomNavigationBar: new BottomNavigationBar(
-        items: list.map((bean) {
-          return getBarItem(bean.position, bean.icon, bean.titile);
-        }).toList(),
-        currentIndex: position,
-        onTap: (int index) => onTabChange(index),
-      ),
+    return ScopedModelDescendant<MainModel>(
+      builder: (context, _, model) {
+        return new Scaffold(
+          appBar: new AppBar(
+            title: new Text(model.list[position].titile),
+            centerTitle: true,
+          ),
+          body: contentView(),
+          bottomNavigationBar: new BottomNavigationBar(
+            items: model.list.map((bean) {
+              return getBarItem(bean.position, bean.icon, bean.titile);
+            }).toList(),
+            currentIndex: position,
+            onTap: (int index) => onTabChange(index),
+          ),
+        );
+      },
     );
+  }
+
+  //静态获取model用法实例
+  Model getModel(BuildContext context) {
+    MainModel countModel = MainModel().of(context);
+    return countModel;
   }
 
   ///底部tab切换
