@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
+import 'package:flutter_app/com/addcn/view/ScopedModelPage.dart';
+import 'package:flutter_app/com/addcn/view/StateManagePage.dart';
+import 'package:flutter_app/com/addcn/view/StreamPage.dart';
 
 ///其他视图
 class OtherPage extends StatefulWidget {
@@ -15,7 +18,9 @@ class OtherPageState extends State<OtherPage> {
     PageBean("动画", "Animation", null),
     PageBean("通知", "Notification", null),
     PageBean("设备信息", "DeviceInfo", null),
-    PageBean("状态管理", "StateManage", null),
+    PageBean("Stream", "Stream", StreamPage()),
+    PageBean("状态管理", "StateManage", StateManagePage()),
+    PageBean("状态管理(第三方)", "ScopedModelPage", ScopedModelPage()),
   ];
 
   @override
