@@ -20,4 +20,8 @@ mixin ScopedPageModel on Model {
       ),
     );
   }
+
+  void reset() {
+    _count = 0;
+  }
 }

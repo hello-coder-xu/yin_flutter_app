@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/model/MainModel.dart';
+import 'package:flutter_app/com/addcn/model/ScopedPageModel.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 ///状态管理
@@ -9,8 +10,13 @@ class ScopedModelPage extends StatefulWidget {
 }
 
 class ScopedModelPageState extends State<ScopedModelPage> {
+  ScopedPageModel model;
 
-
+  @override
+  void initState() {
+    super.initState();
+    model = MainModel().of(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +25,17 @@ class ScopedModelPageState extends State<ScopedModelPage> {
         title: new Text('状态管理'),
         centerTitle: true,
       ),
-      body: new Center(
-        child: new Column(
-          children: <Widget>[
-            CounterWraper(),
-            ScopedModelDescendant<MainModel>(
-              builder: (context, _, model) => new FlatButton(
-                    onPressed: () => model.toTwoPage(context),
-                    child: new Text('toTwoPage'),
-                  ),
+      body: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          CounterWraper(),
+          ScopedModelDescendant<MainModel>(
+            builder: (context, _, model) => new FlatButton(
+              onPressed: () => model.toTwoPage(context),
+              child: new Text('toTwoPage'),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButton: ScopedModelDescendant<MainModel>(
         rebuildOnChange: false,
@@ -40,6 +45,12 @@ class ScopedModelPageState extends State<ScopedModelPage> {
             ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    model.reset();
+    super.dispose();
   }
 }
 

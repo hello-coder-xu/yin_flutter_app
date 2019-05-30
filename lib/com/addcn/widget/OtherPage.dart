@@ -3,6 +3,7 @@ import 'package:flutter_app/com/addcn/bean/PageBean.dart';
 import 'package:flutter_app/com/addcn/view/ScopedModelPage.dart';
 import 'package:flutter_app/com/addcn/view/StateManagePage.dart';
 import 'package:flutter_app/com/addcn/view/StreamPage.dart';
+import 'package:flutter_app/com/addcn/view/TipPage.dart';
 
 ///其他视图
 class OtherPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class OtherPageState extends State<OtherPage> {
   List<PageBean> items = [
     PageBean("主题", "Theme", null),
     PageBean("对话框", "Dialog", null),
-    PageBean("提示", "Toast/snack", null),
+    PageBean("提示", "Toast/snack", TipPage()),
     PageBean("动画", "Animation", null),
     PageBean("通知", "Notification", null),
     PageBean("设备信息", "DeviceInfo", null),
