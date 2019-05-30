@@ -147,6 +147,19 @@ class ImagePageState extends State<ImagePage> {
                       ),
                       alignment: Alignment.center,
                       child: new Title(color: Colors.red,child: new Text('我是一个内容')),
+                    ),
+                    new ListTile(title: new Text('布局上加图片背景'), subtitle: new Text('网络')),
+                    new Container(
+                      width: double.infinity,
+                      height: 100,
+                      decoration: new BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage("https://cp2.100.com.tw/service/active/2019/02/15/155021601801413807_1500x1040xscale1xsid9276.jpg?webp=1&v=3"),
+                          fit: BoxFit.none,
+                        ),
+                      ),
+                      alignment: Alignment.center,
+                      child: new Title(color: Colors.red,child: new Text('我是一个内容')),
                     )
                   ],
                 ),
