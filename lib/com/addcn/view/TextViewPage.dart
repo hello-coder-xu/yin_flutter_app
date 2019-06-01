@@ -126,7 +126,7 @@ class TextViewPage extends StatelessWidget {
                                 TextSpan(text: '斜体', style: TextStyle(fontStyle: FontStyle.italic)),
                                 TextSpan(text: '的'),
                                 TextSpan(text: '30号', style: TextStyle(fontSize: 30)),
-                                TextSpan(text: '的内容的内容的'),
+                                TextSpan(text: '的内容'),
                               ]),
                         ),
                         describe: "查看RichText使用方式"),
