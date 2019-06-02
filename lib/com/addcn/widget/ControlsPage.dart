@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
 import 'package:flutter_app/com/addcn/view/AppBarPage.dart';
 import 'package:flutter_app/com/addcn/view/ButtonPage.dart';
+import 'package:flutter_app/com/addcn/view/CheckPage.dart';
 import 'package:flutter_app/com/addcn/view/DrawerPage.dart';
 import 'package:flutter_app/com/addcn/view/FormPage.dart';
 import 'package:flutter_app/com/addcn/view/ImagePage.dart';
+import 'package:flutter_app/com/addcn/view/RadioPage.dart';
 import 'package:flutter_app/com/addcn/view/TabPage.dart';
 import 'package:flutter_app/com/addcn/view/TextFieldPage.dart';
 import 'package:flutter_app/com/addcn/view/TextViewPage.dart';
@@ -25,8 +27,8 @@ class ControlsPageState extends State<ControlsPage> {
     PageBean("标题栏", "AppBar", AppBarPage()),
     PageBean("抽屉", "Drawer", DrawerPage()),
     PageBean("Tab", "TabView", TabPage()),
-    PageBean("单选", "Radio", null),
-    PageBean("复选", "Check", null),
+    PageBean("单选", "Radio", RadioPage()),
+    PageBean("复选", "Check", CheckPage()),
     PageBean("标签", "Chip", null),
     PageBean("进度", "Progress", null),
     PageBean("webview", "webview", null),
