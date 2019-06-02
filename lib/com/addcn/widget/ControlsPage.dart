@@ -7,6 +7,7 @@ import 'package:flutter_app/com/addcn/view/DrawerPage.dart';
 import 'package:flutter_app/com/addcn/view/FormPage.dart';
 import 'package:flutter_app/com/addcn/view/ImagePage.dart';
 import 'package:flutter_app/com/addcn/view/RadioPage.dart';
+import 'package:flutter_app/com/addcn/view/SwitchPage.dart';
 import 'package:flutter_app/com/addcn/view/TabPage.dart';
 import 'package:flutter_app/com/addcn/view/TextFieldPage.dart';
 import 'package:flutter_app/com/addcn/view/TextViewPage.dart';
@@ -29,6 +30,7 @@ class ControlsPageState extends State<ControlsPage> {
     PageBean("Tab", "TabView", TabPage()),
     PageBean("单选", "Radio", RadioPage()),
     PageBean("复选", "Check", CheckPage()),
+    PageBean("开关", "Switch", SwitchPage()),
     PageBean("标签", "Chip", null),
     PageBean("进度", "Progress", null),
     PageBean("webview", "webview", null),
