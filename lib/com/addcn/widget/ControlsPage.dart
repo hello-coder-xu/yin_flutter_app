@@ -8,6 +8,7 @@ import 'package:flutter_app/com/addcn/view/DividerPage.dart';
 import 'package:flutter_app/com/addcn/view/DrawerPage.dart';
 import 'package:flutter_app/com/addcn/view/FormPage.dart';
 import 'package:flutter_app/com/addcn/view/ImagePage.dart';
+import 'package:flutter_app/com/addcn/view/PageViewPage.dart';
 import 'package:flutter_app/com/addcn/view/ProgressPage.dart';
 import 'package:flutter_app/com/addcn/view/RadioPage.dart';
 import 'package:flutter_app/com/addcn/view/SwitchPage.dart';
@@ -38,7 +39,7 @@ class ControlsPageState extends State<ControlsPage> {
     PageBean("分割线", "Divider", DividerPage()),
     PageBean("进度", "Progress", ProgressPage()),
     PageBean("webview", "webview", null),
-    PageBean("页面滚动", "PageView", null),
+    PageBean("页面滚动", "PageView", PageViewPage()),
     PageBean("列表", "ListView", null),
     PageBean("网格", "GridView", null),
   ];
