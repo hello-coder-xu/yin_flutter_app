@@ -2,21 +2,50 @@ import 'package:flutter/material.dart';
 import 'package:yin_utils/yin_utils.dart';
 
 ///标题栏
-class AppBarPage extends StatefulWidget {
-  @override
-  _AppBarPageState createState() => _AppBarPageState();
-}
-
-class _AppBarPageState extends State<AppBarPage> {
+class AppBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
         title: new Text('appBar视图'),
+        centerTitle: true,
       ),
       body: Align(
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              child: new Text('基础使用', style: new TextStyle(color: Colors.white)),
+              color: Colors.blue,
+              onPressed: () {
+                Navigator.push(context, new MaterialPageRoute(builder: (context) => new AppBarBasePage()));
+              },
+            ),
+            RaisedButton(
+              child: new Text('其他方式(SliverAppBar)', style: new TextStyle(color: Colors.white)),
+              color: Colors.red,
+              onPressed: () {
+                Navigator.push(context, new MaterialPageRoute(builder: (context) => new AppBarOtherPage()));
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+///基础使用
+class AppBarBasePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('appBar基础使用'),
+        centerTitle: true,
+      ),
+      body: Align(
+        child: new Column(
           children: <Widget>[
             new AppBar(
               title: new Text('基础'),
@@ -71,3 +100,18 @@ class _AppBarPageState extends State<AppBarPage> {
     );
   }
 }
+
+///其他使用
+class AppBarOtherPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('其他使用'),
+        centerTitle: true,
+      ),
+    );
+  }
+}
+
+

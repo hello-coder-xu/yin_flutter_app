@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
+import 'package:flutter_app/com/addcn/view/SliverPage.dart';
 
 ///容器视图
 class ContainerPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class ContainerPageState extends State<ContainerPage> {
     PageBean("水平视图", "Row", null),
     PageBean("垂直视图", "Column", null),
     PageBean("相对视图", "Stock", null),
-    PageBean("滚动视图", "ScrollView", null),
+    PageBean("滚动视图", "Sliver", SliverPage()),
     PageBean("容器视图", "Container", null),
     PageBean("盒子视图", "SizedBox", null),
   ];
