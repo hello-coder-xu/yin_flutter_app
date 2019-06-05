@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 //列表刷新与加载更多
-class MyListViewRefreshAndMore extends StatefulWidget {
+class ListViewRefreshAndMorePage extends StatefulWidget {
   @override
   ListViewState createState() {
     return new ListViewState();
   }
 }
 
-class ListViewState extends State<MyListViewRefreshAndMore> {
+class ListViewState extends State<ListViewRefreshAndMorePage> {
   List<String> list = [];
   ScrollController scrollController = new ScrollController();
   bool isLoading = false;
@@ -38,8 +38,6 @@ class ListViewState extends State<MyListViewRefreshAndMore> {
 
   @override
   Widget build(BuildContext context) {
-    Widget divider = Divider(height: 1, color: Colors.blue);
-
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('下拉刷新与加载更多'),
@@ -49,7 +47,7 @@ class ListViewState extends State<MyListViewRefreshAndMore> {
         backgroundColor: Colors.white,
         child: new ListView.separated(
           separatorBuilder: (context, index) {
-            return divider;
+            return Divider();
           },
           itemBuilder: (context, index) {
             return getItemView(context, index);
@@ -120,7 +118,7 @@ class ListViewState extends State<MyListViewRefreshAndMore> {
         ),
       );
     }
-    return noMoreView();
+    return moreView();
   }
 
   //更多视图

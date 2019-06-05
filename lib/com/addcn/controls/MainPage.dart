@@ -6,7 +6,7 @@ import 'package:flutter_app/com/addcn/controls/MyDialog.dart';
 import 'package:flutter_app/com/addcn/controls/MyEditText.dart';
 import 'package:flutter_app/com/addcn/controls/MyImage.dart';
 import 'package:flutter_app/com/addcn/controls/MyKeyBoard.dart';
-import 'package:flutter_app/com/addcn/controls/MyListViewRefreshAndMore.dart';
+import 'package:flutter_app/com/addcn/view/ListViewRefreshAndMorePage.dart';
 import 'package:flutter_app/com/addcn/controls/MyListViewSimple.dart';
 import 'package:flutter_app/com/addcn/controls/MyNetwork.dart';
 import 'package:flutter_app/com/addcn/controls/MyOkToast.dart';
@@ -50,7 +50,7 @@ class MainPageState extends State<MainPage> {
     PageBean("顶部Tab", "顶部", new MyTabTop()),
     PageBean("底部Tab", "底部", new MyTabBottom()),
     PageBean("全局视图", "popwindow", new MyOverlay()),
-    PageBean("列表", "刷新与更多", new MyListViewRefreshAndMore()),
+    PageBean("列表", "刷新与更多", new ListViewRefreshAndMorePage()),
     PageBean("列表", "简单列表", new MyListViewSimple()),
     PageBean("Google验证", "recaptcha_v2", new RecaptchaPage()),
     PageBean("密码验证", "pwd check", new PwdCheckPage()),
