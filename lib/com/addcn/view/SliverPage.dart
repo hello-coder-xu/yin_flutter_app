@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/com/addcn/view/NestedScrollViewPage.dart';
 import 'package:flutter_app/com/addcn/view/SliverAppBarPage.dart';
 import 'package:flutter_app/com/addcn/view/SliverGridPage.dart';
 
@@ -19,6 +20,14 @@ class SliverPage extends StatelessWidget {
           children: <Widget>[
             RaisedButton(
               textColor: Colors.white,
+              child: new Text('SliverAppBar'),
+              onPressed: () {
+                Navigator.push(context, new MaterialPageRoute(builder: (context) => SliverAppBarPage()));
+              },
+              color: Colors.red[900],
+            ),
+            RaisedButton(
+              textColor: Colors.white,
               child: new Text('SliverList'),
               onPressed: () {
                 Navigator.push(context, new MaterialPageRoute(builder: (context) => SliverListPage()));
@@ -32,14 +41,6 @@ class SliverPage extends StatelessWidget {
                 Navigator.push(context, new MaterialPageRoute(builder: (context) => SliverGridPage()));
               },
               color: Colors.red[600],
-            ),
-            RaisedButton(
-              textColor: Colors.white,
-              child: new Text('SliverAppBar'),
-              onPressed: () {
-                Navigator.push(context, new MaterialPageRoute(builder: (context) => SliverAppBarPage()));
-              },
-              color: Colors.red[900],
             ),
           ],
         ),
