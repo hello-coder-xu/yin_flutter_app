@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_html_textview/flutter_html_textview.dart';
 
 String html =
     '''<h1>This is &nbsp;heading 1</h1><a href="https://google.com">Google</a><br/><img alt="Test Image" src="https://source.unsplash.com/random/300x200"><br/>''';
