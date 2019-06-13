@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
-import 'package:flutter_app/com/addcn/controls/MyAnimations.dart';
-import 'package:flutter_app/com/addcn/controls/MyButton.dart';
 import 'package:flutter_app/com/addcn/controls/MyDialog.dart';
-import 'package:flutter_app/com/addcn/controls/MyEditText.dart';
 import 'package:flutter_app/com/addcn/controls/MyImage.dart';
 import 'package:flutter_app/com/addcn/controls/MyKeyBoard.dart';
 import 'package:flutter_app/com/addcn/view/ListViewRefreshAndMorePage.dart';
@@ -12,17 +9,10 @@ import 'package:flutter_app/com/addcn/controls/MyNetwork.dart';
 import 'package:flutter_app/com/addcn/controls/MyOkToast.dart';
 import 'package:flutter_app/com/addcn/controls/MyOverlay.dart';
 import 'package:flutter_app/com/addcn/controls/MyPhoto.dart';
-import 'package:flutter_app/com/addcn/controls/MySwitch.dart';
-import 'package:flutter_app/com/addcn/controls/MyTabBottom.dart';
-import 'package:flutter_app/com/addcn/controls/MyTabTop.dart';
 import 'package:flutter_app/com/addcn/view/TextViewPage.dart';
-import 'package:flutter_app/com/addcn/controls/MyViewpager.dart';
-import 'package:flutter_app/com/addcn/layout/MyLinearLayout.dart';
 import 'package:flutter_app/com/addcn/page/MyDatePicker.dart';
 import 'package:flutter_app/com/addcn/page/PwdCheckPage.dart';
 import 'package:flutter_app/com/addcn/page/RecaptchaPage.dart';
-
-import 'package:flutter_app/com/addcn/layout/MyRelativeLayout.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -31,24 +21,15 @@ class MainPage extends StatefulWidget {
 
 class MainPageState extends State<MainPage> {
   List<PageBean> items = [
-    PageBean("线性布局", "LinearLayout", new MyLinearLayout()),
-    PageBean("相对布局", "RelativeLayout", new MyRelativeLayout()),
     PageBean("文本", "text", new TextViewPage()),
-    PageBean("按钮", "button", new MyButton()),
-    PageBean("输入框", "TextField", new MyEditText()),
     PageBean("键盘", "keyboard", new MyKeyBoard()),
     PageBean("时间选择器", "DatePicker", new MyDatePicker()),
     PageBean("加载网页", "webview", null),
     PageBean("图片", "image", new MyImage()),
     PageBean("对话框", "dialog", new MyDialog()),
-    PageBean("动画", "animations", new MyAnimations()),
-    PageBean("切换", "switch", new MySwitch()),
     PageBean("照片", "相册和拍照", new MyPhoto()),
-    PageBean("画廊", "Viewpager", new MyViewPager()),
     PageBean("提示", "Toast", new MyOkToast()),
     PageBean("网络请求", "http", new MyNetWork()),
-    PageBean("顶部Tab", "顶部", new MyTabTop()),
-    PageBean("底部Tab", "底部", new MyTabBottom()),
     PageBean("全局视图", "popwindow", new MyOverlay()),
     PageBean("列表", "刷新与更多", new ListViewRefreshAndMorePage()),
     PageBean("列表", "简单列表", new MyListViewSimple()),

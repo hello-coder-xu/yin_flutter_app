@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
+import 'package:flutter_app/com/addcn/view/DeviceInfoPage.dart';
+import 'package:flutter_app/com/addcn/view/EmojiPage.dart';
 import 'package:flutter_app/com/addcn/view/ScopedModelPage.dart';
 import 'package:flutter_app/com/addcn/view/StateManagePage.dart';
 import 'package:flutter_app/com/addcn/view/StreamPage.dart';
@@ -18,7 +20,8 @@ class OtherPageState extends State<OtherPage> {
     PageBean("提示", "Toast/snack", TipPage()),
     PageBean("动画", "Animation", null),
     PageBean("通知", "Notification", null),
-    PageBean("设备信息", "DeviceInfo", null),
+    PageBean("表情包", "emoji", EmojiPage()),
+    PageBean("设备信息", "DeviceInfo", DeviceInfoPage()),
     PageBean("数据监听", "Stream", StreamPage()),
     PageBean("状态管理", "InheritedWidget", StateManagePage()),
     PageBean("状态管理", "ScopedModelPage", ScopedModelPage()),

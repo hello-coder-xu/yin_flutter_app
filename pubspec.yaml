@@ -37,9 +37,9 @@ dependencies:
   flutter_html: ^0.9.6                   # 显示html
   f_grecaptcha: ^1.0.1
   flutter_datetime_picker: ^1.1.6
-  yin_utils: 0.0.3
+  yin_utils: 0.0.4
   scoped_model: ^1.0.1                   # 状态管理
-
+  emoji_picker: ^0.0.2                   # 表情
 
 dev_dependencies:
   flutter_test:

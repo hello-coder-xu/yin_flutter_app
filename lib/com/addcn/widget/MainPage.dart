@@ -5,6 +5,7 @@ import 'package:flutter_app/com/addcn/widget/ContainerPage.dart';
 import 'package:flutter_app/com/addcn/widget/ControlsPage.dart';
 import 'package:flutter_app/com/addcn/widget/OtherPage.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:yin_utils/yin_utils.dart';
 
 ///主页
 class MainPage extends StatefulWidget {
@@ -15,6 +16,18 @@ class MainPage extends StatefulWidget {
 class MainPageState extends State<MainPage> {
   MainTabPageModel model;
   int position = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    initSpUtil();
+  }
+
+  void initSpUtil() async {
+    await SpUtil.getInstance();
+    SpUtil.isDebug = false;
+  }
 
   ///获取颜色
   Color getBarItemColor(int index) {
