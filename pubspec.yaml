@@ -40,6 +40,8 @@ dependencies:
   yin_utils: 0.0.4
   scoped_model: ^1.0.1                   # 状态管理
   emoji_picker: ^0.0.2                   # 表情
+  rxdart: ^0.22.0
+
 
 dev_dependencies:
   flutter_test:

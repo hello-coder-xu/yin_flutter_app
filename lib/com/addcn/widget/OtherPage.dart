@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
 import 'package:flutter_app/com/addcn/view/DeviceInfoPage.dart';
 import 'package:flutter_app/com/addcn/view/EmojiPage.dart';
+import 'package:flutter_app/com/addcn/view/RxDartPage.dart';
 import 'package:flutter_app/com/addcn/view/ScopedModelPage.dart';
 import 'package:flutter_app/com/addcn/view/StateManagePage.dart';
 import 'package:flutter_app/com/addcn/view/StreamPage.dart';
@@ -25,6 +26,7 @@ class OtherPageState extends State<OtherPage> {
     PageBean("数据监听", "Stream", StreamPage()),
     PageBean("状态管理", "InheritedWidget", StateManagePage()),
     PageBean("状态管理", "ScopedModelPage", ScopedModelPage()),
+    PageBean("响应式编程", "RxDart", RxDartPage()),
   ];
 
   @override
