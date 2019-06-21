@@ -39,10 +39,12 @@ class FormPageState extends State<FormPage> {
                         TextFormField(
                           decoration: InputDecoration(
                             labelText: "用户名",
-
                           ),
                           onSaved: (value) {
                             name = value;
+                          },
+                          onFieldSubmitted: (value) {
+                            print("test 111");
                           },
                           validator: (value) {
                             return value.length < 10 ? "用户名不能小于10位" : null;
