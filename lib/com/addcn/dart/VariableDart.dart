@@ -112,7 +112,7 @@ void main() {
   listData.removeRange(2, 4);
   //删除满足条件的数据
   listData.removeWhere((it) => it.toString().length == 1);
-  
+
   // 其他
   //根据字符的长度排序
   listData.sort((a, b) => a.toString().length.compareTo(b.toString().length));

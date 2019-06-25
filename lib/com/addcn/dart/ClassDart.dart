@@ -6,10 +6,20 @@ class Book {
 
   Book.price(this.price);
 
+  get carPrice => Car("宝马").price;
+}
 
-  get carPrice=>Car("宝马").price;
+class Enginer {
+
 
 }
+
+class Bmo {
+
+
+}
+
+class Bc {}
 
 class Car {
   final String name;
@@ -38,17 +48,27 @@ class Car {
   }
 }
 
+class Test extends Enginer with Bmo implements Bc {
+
+}
+
+mixin Test2 on Enginer, Bmo, Bc {
+  int price;
+  int num;
+  
+
+}
+
 void main() {
   var book = Book.price(12);
 //  book.name = "Dart";
 //  print('name=${book.name}');
 
   var car = Car("宝马");
-  car.price=190;
+  car.price = 190;
   car.log("1573");
   print('price=${book.carPrice}');
 
   var car1 = Car("宝马");
-  assert(car1.price==190);
-
+  assert(car1.price == 190);
 }

@@ -5,6 +5,7 @@ import 'package:flutter_app/com/addcn/view/EmojiPage.dart';
 import 'package:flutter_app/com/addcn/view/RxDartPage.dart';
 import 'package:flutter_app/com/addcn/view/ScopedModelPage.dart';
 import 'package:flutter_app/com/addcn/view/StateManagePage.dart';
+import 'package:flutter_app/com/addcn/view/StatePage.dart';
 import 'package:flutter_app/com/addcn/view/StreamPage.dart';
 import 'package:flutter_app/com/addcn/view/TipPage.dart';
 
@@ -16,6 +17,7 @@ class OtherPage extends StatefulWidget {
 
 class OtherPageState extends State<OtherPage> {
   List<PageBean> items = [
+    PageBean("生命周期", "State", StatePage()),
     PageBean("主题", "Theme", null),
     PageBean("对话框", "Dialog", null),
     PageBean("提示", "Toast/snack", TipPage()),
