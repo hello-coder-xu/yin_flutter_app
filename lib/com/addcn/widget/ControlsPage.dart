@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
+import 'package:flutter_app/com/addcn/comm/Application.dart';
+import 'package:flutter_app/com/addcn/comm/Common.dart';
+import 'package:flutter_app/com/addcn/comm/NavigatorUtil.dart';
 import 'package:flutter_app/com/addcn/view/AppBarPage.dart';
 import 'package:flutter_app/com/addcn/view/ButtonPage.dart';
 import 'package:flutter_app/com/addcn/view/CheckPage.dart';
@@ -68,9 +71,18 @@ class ControlsPageState extends State<ControlsPage> {
   ///item 点击
   void onItemClick(int index) {
     if (items[index].page == null) return;
-    Navigator.push(
+//    Navigator.push(
+//      context,
+//      new MaterialPageRoute(builder: (context) => items[index].page),
+//    );
+
+
+    NavigatorUtil.navigateTo(
       context,
-      new MaterialPageRoute(builder: (context) => items[index].page),
-    );
+      "/textViewPage",
+      transition: TransitionType.inFromRight,
+    ).then((value) {
+      print('test back value=$value');
+    });
   }
 }

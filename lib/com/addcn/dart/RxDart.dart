@@ -42,4 +42,15 @@ void main() {
   behaviorSubject.listen((data) => print("behaviorSubject 2:${data.toUpperCase()}"));
   behaviorSubject.add("hao");
   behaviorSubject.close();
+
+  mydata.then((value) {
+    print(value);
+  });
+}
+
+get mydata => getData();
+
+Future getData() async {
+  await Future.delayed(Duration(seconds: 3));
+  return Future.value("good boy");
 }

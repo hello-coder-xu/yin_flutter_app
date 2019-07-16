@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/com/addcn/comm/NavigatorUtil.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 String html =
     '''<h1>This is &nbsp;heading 1</h1><a href="https://google.com">Google</a><br/><img alt="Test Image" src="https://source.unsplash.com/random/300x200"><br/>''';
 
 ///文本视图
+
 class TextViewPage extends StatelessWidget {
+  final String name;
+
+  TextViewPage({this.name});
+
   ///text item 视图
   Widget textItem({Widget view, String describe}) {
     List<Widget> views = new List();
@@ -23,6 +29,7 @@ class TextViewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('test name=$name');
     return new Scaffold(
         appBar: new AppBar(
           title: new Text("TextView"),

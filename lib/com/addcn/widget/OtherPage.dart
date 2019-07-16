@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
+import 'package:flutter_app/com/addcn/test/StatePage.dart';
 import 'package:flutter_app/com/addcn/view/DeviceInfoPage.dart';
 import 'package:flutter_app/com/addcn/view/EmojiPage.dart';
 import 'package:flutter_app/com/addcn/view/RxDartPage.dart';
 import 'package:flutter_app/com/addcn/view/ScopedModelPage.dart';
-import 'package:flutter_app/com/addcn/view/StateManagePage.dart';
-import 'package:flutter_app/com/addcn/view/StatePage.dart';
+import 'package:flutter_app/com/addcn/view/InheritedPage.dart';
+import 'package:flutter_app/com/addcn/view/ScopedPage.dart';
 import 'package:flutter_app/com/addcn/view/StreamPage.dart';
 import 'package:flutter_app/com/addcn/view/TipPage.dart';
 
@@ -17,8 +18,8 @@ class OtherPage extends StatefulWidget {
 
 class OtherPageState extends State<OtherPage> {
   List<PageBean> items = [
-    PageBean("生命周期", "State", StatePage()),
-    PageBean("主题", "Theme", null),
+    PageBean("生命周期", "State", ScopedPage()),
+    PageBean("主题", "Theme", StatePage()),
     PageBean("对话框", "Dialog", null),
     PageBean("提示", "Toast/snack", TipPage()),
     PageBean("动画", "Animation", null),
@@ -26,7 +27,7 @@ class OtherPageState extends State<OtherPage> {
     PageBean("表情包", "emoji", EmojiPage()),
     PageBean("设备信息", "DeviceInfo", DeviceInfoPage()),
     PageBean("数据监听", "Stream", StreamPage()),
-    PageBean("状态管理", "InheritedWidget", StateManagePage()),
+    PageBean("状态管理", "InheritedWidget", InheritedPage()),
     PageBean("状态管理", "ScopedModelPage", ScopedModelPage()),
     PageBean("响应式编程", "RxDart", RxDartPage()),
   ];

@@ -37,24 +37,29 @@ class _PageViewPageState extends State<PageViewPage> {
                   child: PageView(
                     controller: controller,
                     onPageChanged: (value) => pageChangeValue(value),
+                    children: <Widget>[OnePage(), TwoPage()],
+                  ),
+                ),
+                Container(
+                  height: 100,
+                  child: PageView(
+                    controller: controller,
+                    onPageChanged: (value) => pageChangeValue(value),
                     children: <Widget>[
                       Container(
                         color: Colors.yellow,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.bluetooth,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.bluetooth, color: Colors.black, size: 32.0),
                       ),
                       Container(
                         color: Colors.blue,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.accessibility,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.accessibility, color: Colors.black, size: 32.0),
                       ),
                       Container(
                         color: Colors.red,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.cake,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.cake, color: Colors.black, size: 32.0),
                       ),
                     ],
                   ),
@@ -68,20 +73,17 @@ class _PageViewPageState extends State<PageViewPage> {
                       Container(
                         color: Colors.yellow,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.bluetooth,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.bluetooth, color: Colors.black, size: 32.0),
                       ),
                       Container(
                         color: Colors.blue,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.accessibility,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.accessibility, color: Colors.black, size: 32.0),
                       ),
                       Container(
                         color: Colors.red,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.cake,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.cake, color: Colors.black, size: 32.0),
                       ),
                     ],
                   ),
@@ -95,20 +97,17 @@ class _PageViewPageState extends State<PageViewPage> {
                       Container(
                         color: Colors.yellow,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.bluetooth,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.bluetooth, color: Colors.black, size: 32.0),
                       ),
                       Container(
                         color: Colors.blue,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.accessibility,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.accessibility, color: Colors.black, size: 32.0),
                       ),
                       Container(
                         color: Colors.red,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.cake,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.cake, color: Colors.black, size: 32.0),
                       ),
                     ],
                   ),
@@ -122,20 +121,17 @@ class _PageViewPageState extends State<PageViewPage> {
                       Container(
                         color: Colors.yellow,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.bluetooth,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.bluetooth, color: Colors.black, size: 32.0),
                       ),
                       Container(
                         color: Colors.blue,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.accessibility,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.accessibility, color: Colors.black, size: 32.0),
                       ),
                       Container(
                         color: Colors.red,
                         alignment: Alignment.center,
-                        child: new Icon(Icons.cake,
-                            color: Colors.black, size: 32.0),
+                        child: new Icon(Icons.cake, color: Colors.black, size: 32.0),
                       ),
                     ],
                   ),
@@ -153,8 +149,7 @@ class _PageViewPageState extends State<PageViewPage> {
                           color: Colors.red[index * 100],
                           child: new Text(
                             '$index',
-                            style: new TextStyle(
-                                fontSize: 48.0, color: Colors.white),
+                            style: new TextStyle(fontSize: 48.0, color: Colors.white),
                           ),
                         );
                       },
@@ -174,8 +169,7 @@ class _PageViewPageState extends State<PageViewPage> {
                         color: Colors.blue[index * 100],
                         child: new Text(
                           '$index',
-                          style: new TextStyle(
-                              fontSize: 48.0, color: Colors.white),
+                          style: new TextStyle(fontSize: 48.0, color: Colors.white),
                         ),
                       );
                     },
@@ -200,5 +194,87 @@ class _PageViewPageState extends State<PageViewPage> {
   void dispose() {
     controller.dispose();
     super.dispose();
+  }
+}
+
+class OnePage extends StatefulWidget {
+  @override
+  OnePageState createState() => new OnePageState();
+}
+
+class OnePageState extends State<OnePage> {
+  @override
+  Widget build(BuildContext context) {
+    return new Material(
+      child: Container(
+        alignment: Alignment.center,
+        color: Colors.red,
+      ),
+    );
+  }
+
+  @override
+  void initState() {
+    print('test OnePage initState');
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    print('test OnePage dispose');
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(OnePage oldWidget) {
+    print('test OnePage didUpdateWidget');
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void didChangeDependencies() {
+    print('test OnePage didChangeDependencies');
+    super.didChangeDependencies();
+  }
+}
+
+class TwoPage extends StatefulWidget {
+  @override
+  TwoPageState createState() => new TwoPageState();
+}
+
+class TwoPageState extends State<TwoPage> {
+  @override
+  Widget build(BuildContext context) {
+    return new Material(
+      child: Container(
+        alignment: Alignment.center,
+        color: Colors.deepOrange,
+      ),
+    );
+  }
+
+  @override
+  void initState() {
+    print('test TwoPage initState');
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    print('test TwoPage dispose');
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(TwoPage oldWidget) {
+    print('test TwoPage didUpdateWidget');
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void didChangeDependencies() {
+    print('test TwoPage didChangeDependencies');
+    super.didChangeDependencies();
   }
 }
