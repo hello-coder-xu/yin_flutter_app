@@ -11,43 +11,19 @@ class InheritedPageState extends State<InheritedPage> {
 
   @override
   Widget build(BuildContext context) {
-//    return CounterProvider(
-//      count: count,
-//      add: add,
-//      child: new Scaffold(
-//        appBar: new AppBar(
-//          title: new Text('状态管理'),
-//          centerTitle: true,
-//        ),
-//        body: CounterWraper(),
-//        floatingActionButton: FloatingActionButton(
-//          child: new Icon(Icons.add),
-//          onPressed: add,
-//        ),
-//      ),
-//    );
-
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('状态管理'),
-        centerTitle: true,
-      ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            ActionChip(
-              onPressed: add,
-              backgroundColor: Colors.blue,
-              label: new Text('$count'),
-            ),
-             _TextView(count),
-          ],
+    return CounterProvider(
+      count: count,
+      add: add,
+      child: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('状态管理'),
+          centerTitle: true,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: new Icon(Icons.add),
-        onPressed: add,
+        body: CounterWraper(),
+        floatingActionButton: FloatingActionButton(
+          child: new Icon(Icons.add),
+          onPressed: add,
+        ),
       ),
     );
   }
@@ -77,7 +53,7 @@ class CounterWraper extends StatelessWidget {
 class _TextView extends StatelessWidget {
   final int number;
 
-   _TextView(this.number);
+  _TextView(this.number);
 
   @override
   Widget build(BuildContext context) {

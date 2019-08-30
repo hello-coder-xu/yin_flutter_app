@@ -33,6 +33,7 @@ class ScopedPageState extends State<ScopedPage> {
 
     return ScopedModelDescendant<MainModel>(
       builder: (context, _, model) {
+        print('test ScopedPageState Container');
         return Container(
           alignment: Alignment.center,
           child: Column(

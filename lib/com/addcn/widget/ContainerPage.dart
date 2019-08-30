@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/az/MyAzlistview.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
-import 'package:flutter_app/com/addcn/view/AnimatedBuilderPage.dart';
+import 'package:flutter_app/com/addcn/view/AnimatedPage.dart';
 import 'package:flutter_app/com/addcn/view/NestedScrollViewPage.dart';
 import 'package:flutter_app/com/addcn/view/SliverPage.dart';
 
@@ -17,7 +17,7 @@ class ContainerPageState extends State<ContainerPage> {
     PageBean("垂直视图", "Column", null),
     PageBean("相对视图", "Stock", null),
     PageBean("滚动视图", "Sliver", SliverPage()),
-    PageBean("动画视图", "AnimatedWidget", AnimatedBuilderPage()),
+    PageBean("动画视图", "AnimatedWidget", AnimatedPage()),
     PageBean("滚动视图", "NestedScrollView", NestedScrollViewPage()),
     PageBean("容器视图", "Container", null),
     PageBean("盒子视图", "SizedBox", null),

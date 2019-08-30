@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
-import 'package:flutter_app/com/addcn/test/StatePage.dart';
 import 'package:flutter_app/com/addcn/view/DeviceInfoPage.dart';
+import 'package:flutter_app/com/addcn/view/DialogPage.dart';
 import 'package:flutter_app/com/addcn/view/EmojiPage.dart';
 import 'package:flutter_app/com/addcn/view/RxDartPage.dart';
 import 'package:flutter_app/com/addcn/view/ScopedModelPage.dart';
@@ -19,8 +19,7 @@ class OtherPage extends StatefulWidget {
 class OtherPageState extends State<OtherPage> {
   List<PageBean> items = [
     PageBean("生命周期", "State", ScopedPage()),
-    PageBean("主题", "Theme", StatePage()),
-    PageBean("对话框", "Dialog", null),
+    PageBean("对话框", "Dialog", DialogPage()),
     PageBean("提示", "Toast/snack", TipPage()),
     PageBean("动画", "Animation", null),
     PageBean("通知", "Notification", null),

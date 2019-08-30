@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/com/addcn/bean/PageBean.dart';
-import 'package:flutter_app/com/addcn/comm/Application.dart';
-import 'package:flutter_app/com/addcn/comm/Common.dart';
-import 'package:flutter_app/com/addcn/comm/NavigatorUtil.dart';
+import 'package:flutter_app/com/addcn/mvp/ui/main/index.dart';
 import 'package:flutter_app/com/addcn/view/AppBarPage.dart';
 import 'package:flutter_app/com/addcn/view/ButtonPage.dart';
 import 'package:flutter_app/com/addcn/view/CheckPage.dart';
@@ -44,6 +42,7 @@ class ControlsPageState extends State<ControlsPage> {
     PageBean("进度", "Progress", ProgressPage()),
     PageBean("webview", "webview", null),
     PageBean("页面滚动", "PageView", PageViewPage()),
+    PageBean("mvp", "MvpDemo", MvpDemo()),
     PageBean("列表", "ListView", ListViewPage()),
     PageBean("网格", "GridView", null),
   ];
@@ -71,18 +70,9 @@ class ControlsPageState extends State<ControlsPage> {
   ///item 点击
   void onItemClick(int index) {
     if (items[index].page == null) return;
-//    Navigator.push(
-//      context,
-//      new MaterialPageRoute(builder: (context) => items[index].page),
-//    );
-
-
-    NavigatorUtil.navigateTo(
+    Navigator.push(
       context,
-      "/textViewPage",
-      transition: TransitionType.inFromRight,
-    ).then((value) {
-      print('test back value=$value');
-    });
+      new MaterialPageRoute(builder: (context) => items[index].page),
+    );
   }
 }

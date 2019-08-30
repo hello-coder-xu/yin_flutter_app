@@ -36,21 +36,15 @@ void main() {
 //  publishSubject.close();
 
   BehaviorSubject<String> behaviorSubject = BehaviorSubject<String>();
+  behaviorSubject.add("abc");
   behaviorSubject.add("hello");
   behaviorSubject.add("world");
   behaviorSubject.listen((data) => print("behaviorSubject 1:$data"));
   behaviorSubject.listen((data) => print("behaviorSubject 2:${data.toUpperCase()}"));
+
   behaviorSubject.add("hao");
   behaviorSubject.close();
 
-  mydata.then((value) {
-    print(value);
-  });
-}
 
-get mydata => getData();
 
-Future getData() async {
-  await Future.delayed(Duration(seconds: 3));
-  return Future.value("good boy");
 }
