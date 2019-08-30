@@ -3,9 +3,6 @@ import 'package:flutter_app/com/addcn/mvp/ui/main/main_model.dart';
 import 'package:flutter_app/com/addcn/mvp/ui/main/main_presenter.dart';
 import 'package:weui/button/index.dart';
 
-
-
-
 Widget renderWidget({String title, int index, MvpPresenter mvpPresenter, MvpModel mvpModel}) {
   return Container(
     child: Column(
@@ -55,6 +52,12 @@ Widget renderWidget({String title, int index, MvpPresenter mvpPresenter, MvpMode
                     size: WeButtonSize.mini,
                     theme: WeButtonType.primary,
                     onClick: mvpPresenter.updateThreeIndex,
+                  ),
+                  WeButton(
+                    '显示加载',
+                    size: WeButtonSize.mini,
+                    theme: WeButtonType.primary,
+                    onClick: mvpPresenter.showAutoLoading,
                   ),
                   WeButton(
                     '切换tab',

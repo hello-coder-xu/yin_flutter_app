@@ -48,6 +48,13 @@ class MvpPresenter extends Presenter {
     model.notifyWidget();
   }
 
+  void showAutoLoading() {
+    showLoading();
+    Future.delayed(Duration(seconds: 2), () {
+      hideLoading();
+    });
+  }
+
   void toFour() {
     Navigator.push(model.context, MaterialPageRoute(builder: (context) => FourWidget()));
   }
